@@ -1,0 +1,22 @@
+svg {
+    display: inline-block;
+    margin: 10px;
+}
+
+.rect-1:hover {
+    fill: #f900ae;
+    stroke: rgb(1, 170, 255);
+    transition: 0.3s;
+}
+
+.rect-2:hover {
+    fill: #7FFFD4;
+    stroke: rgb(223, 2, 223);
+    transition: 0.3s;
+}
+
+
+.ellipse:hover {
+
+    stroke: rgb(254, 249, 122);
+}

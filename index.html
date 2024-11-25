@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @keyframes shake {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(-5px, 5px); }
+        50% { transform: translate(5px, -5px); }
+        75% { transform: translate(-5px, -5px); }
+        100% { transform: translate(0, 0); }
+      }
+
+      .ellipse {
+        transition: fill 0.3s ease;
+      }
+      .ellipse:hover {
+        fill: url(#grad2);
+      }
+
+      .circle {
+        transition: fill 0.3s ease, stroke 0.3s ease;
+      }
+      .circle:hover {
+        animation: shake 0.5s ease-in-out;
+        fill: #ffb6c1; 
+        stroke: rgb(48, 83, 255); 
+      }
+    </style>
+  </head>
+
+  <body>
+    <svg width="150" height="250" role="img" aria-label="Красный прямоугольник">
+      <rect
+        x="25"
+        y="25"
+        width="100"
+        height="100"
+        fill="red"
+        stroke="black"
+        stroke-width="5"
+        class="rect-1"
+      />
+    </svg>
+
+    <svg width="300" height="250" role="img" aria-label="Синий прямоугольник">
+      <rect
+        x="50"
+        y="25"
+        width="200"
+        height="100"
+        fill="blue"
+        stroke="black"
+        stroke-width="5"
+        class="rect-2"
+      />
+    </svg>
+
+    <svg width="200" height="250" role="img" aria-label="Зелёный круг">
+      <circle
+        cx="100"
+        cy="75"
+        r="50"
+        fill="green"
+        stroke="black"
+        stroke-width="5"
+        class="circle"
+      />
+    </svg>
+
+    <svg width="200" height="250" role="img" aria-label="Эллипс с текстом SVG">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color: rgb(255, 187, 104); stop-opacity: 1" />
+          <stop offset="100%" style="stop-color: rgb(104, 255, 127); stop-opacity: 1" />
+        </linearGradient>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color: rgb(123, 228, 123); stop-opacity: 1" />
+          <stop offset="100%" style="stop-color: rgb(255, 0, 0); stop-opacity: 1" />
+        </linearGradient>
+      </defs>
+      <ellipse
+        cx="100"
+        cy="75"
+        rx="70"
+        ry="40"
+        fill="url(#grad1)"
+        stroke="black"
+        stroke-width="5"
+        class="ellipse"
+      />
+      <text fill="#fff435" font-size="30" font-family="Roboto, Arial, sans-serif" x="65" y="85">
+        SVG
+      </text>
+    </svg>
+  </body>
+</html>
